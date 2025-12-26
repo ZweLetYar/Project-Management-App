@@ -9,7 +9,7 @@ function layout({ children }: { children: React.ReactNode }) {
       <div className="flex">
         <LeftSidebar />
         <main className="w-3/5">{children}</main>
-        {/* <RightSidebar /> */}
+        <RightSidebar />
       </div>
     </div>
   );
