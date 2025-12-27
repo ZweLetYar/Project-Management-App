@@ -1,4 +1,7 @@
 import React from "react";
+import ProgressBar from "../components/ProgressBar";
+import Image from "next/image";
+import Project from "../components/Project";
 
 function page() {
   return (
@@ -64,6 +67,37 @@ function page() {
             </div>
             <div className="w-[80%] h-2 rounded-full bg-red-300"></div>
           </div>
+        </div>
+      </div>
+      <div className="flex flex-col gap-3">
+        <div className="flex justify-between items-center ">
+          <h2 className="text-lg font-medium">Projects</h2>
+          <button className="border text-sm font-medium border-secondary rounded-md  px-3 py-1 hover:bg-secondary/10 transition text-secondary">
+            View all projects
+          </button>
+        </div>
+        <div className="flex flex-col  justify-between border border-gray-200 shadow-sm rounded-lg ">
+          <Project
+            color="red"
+            name="Project Management System"
+            date="3 Nov, 2025"
+            status="Overdue"
+            percent={75}
+          />
+          <Project
+            color="orange"
+            name="Dev Talk Forum"
+            date="15 Oct, 2025"
+            status="On Track"
+            percent={60}
+          />
+          <Project
+            color="green"
+            name="Period Tracker App"
+            date="10 Nov, 2025"
+            status="Behind"
+            percent={45}
+          />
         </div>
       </div>
     </div>
