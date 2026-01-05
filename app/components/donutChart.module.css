@@ -1,0 +1,47 @@
+.container {
+  position: relative;
+  display: inline-block;
+}
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  pointer-events: none;
+}
+.centerValue {
+  font-weight: 700;
+  color: #111827;
+}
+.centerLabel {
+  font-size: 12px;
+  color: #6b7280;
+}
+.legend {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-start;
+}
+.legendItem {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 12px;
+  color: #374151;
+}
+.legendSwatch {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  display: inline-block;
+}
+.legendLabel {
+  color: #6b7280;
+}
+.legendValue {
+  margin-left: 6px;
+  font-weight: 600;
+}

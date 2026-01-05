@@ -2,6 +2,13 @@ import Image from "next/image";
 
 import ProgressBar from "./ProgressBar";
 
+const colorMap: Record<string, string> = {
+  blue: "bg-blue-400",
+  red: "bg-red-400",
+  green: "bg-green-400",
+  yellow: "bg-yellow-400",
+};
+
 function Project({
   color,
   name,
@@ -18,7 +25,7 @@ function Project({
   return (
     <div className=" flex items-center justify-start m-3 gap-2 ">
       <div
-        className={`w-7 h-7 flex items-center justify-center rounded-full bg-${color}-400`}
+        className={`w-7 h-7 flex items-center justify-center rounded-full ${colorMap[color]}`}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -40,13 +47,14 @@ function Project({
         <p className="text-sm text-gray-500">started at {date}</p>
       </div>
       <div
-        className={`min-w-[10%] rounded-full text-sm bg-${color}-400 text-white px-5 py-1 ml-auto `}
+        className={`min-w-[10%] rounded-full text-sm ${colorMap[color]} text-white px-5 py-1 ml-auto `}
       >
         {status}
       </div>
       <div className="min-w-[20%] ">
         <ProgressBar value={percent} color={color} />
       </div>
+
       <div className="relative  min-w-[15%] h-7  ms-2">
         <div className="absolute top-0 left-0 flex items-center">
           <div className="flex -space-x-3">

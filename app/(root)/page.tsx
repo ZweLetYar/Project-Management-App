@@ -1,7 +1,32 @@
-import React from "react";
-import ProgressBar from "../components/ProgressBar";
-import Image from "next/image";
+import DonutChart from "../components/DonutChart";
+import LineChart from "../components/LineChart";
 import Project from "../components/Project";
+const sampleChartData = [
+  { x: "Mon", y: 12 },
+  { x: "Tue", y: 18 },
+  { x: "Wed", y: 14 },
+  { x: "Thu", y: 22 },
+  { x: "Fri", y: 20 },
+  { x: "Sat", y: 26 },
+  { x: "Sun", y: 24 },
+];
+
+const sampleChartData2 = [
+  { x: "Mon", y: 6 },
+  { x: "Tue", y: 9 },
+  { x: "Wed", y: 11 },
+  { x: "Thu", y: 16 },
+  { x: "Fri", y: 14 },
+  { x: "Sat", y: 19 },
+  { x: "Sun", y: 22 },
+];
+
+const donutData = [
+  { label: "Completed", value: 58, color: "#06b6d4" },
+  { label: "In Progress", value: 28, color: "#f59e0b" },
+  { label: "Blocked", value: 8, color: "#ef4444" },
+  { label: "Planned", value: 6, color: "#10b981" },
+];
 
 function page() {
   return (
@@ -85,7 +110,7 @@ function page() {
             percent={75}
           />
           <Project
-            color="orange"
+            color="blue"
             name="Dev Talk Forum"
             date="15 Oct, 2025"
             status="On Track"
@@ -98,6 +123,40 @@ function page() {
             status="Behind"
             percent={45}
           />
+        </div>
+      </div>
+
+      <div className="flex flex-col gap-3 border border-gray-200 shadow-sm rounded-lg p-4 ">
+        <h2 className="text-lg font-medium">Activity Summary</h2>
+        <div className="flex gap-6 justify-evenly items-center ">
+          <div className="flex flex-col items-center">
+            <LineChart
+              data={sampleChartData}
+              width={250}
+              height={140}
+              color="#06b6d4"
+              showArea
+            />
+            <div className="text-sm text-gray-500 mt-2">This week — Visits</div>
+          </div>
+
+          <div className="flex flex-col items-center">
+            <LineChart
+              data={sampleChartData2}
+              width={250}
+              height={140}
+              color="#7c3aed"
+              showArea
+            />
+            <div className="text-sm text-gray-500 mt-2">
+              This week — Signups
+            </div>
+          </div>
+
+          <div className="flex flex-col items-center">
+            <DonutChart data={donutData} size={140} thickness={22} />
+            <div className="text-sm text-gray-500 mt-2">Task Status</div>
+          </div>
         </div>
       </div>
     </div>
