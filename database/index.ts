@@ -1,10 +1,17 @@
+import CompanyMember from "./companyMember.model";
+import Project from "./project.model";
+import Task from "./task.model";
+import TaskActivity from "./taskActivity.model";
+import Team from "./team.model";
+import User from "./user.model";
+
 const models = {
-  User: require("./user.model").default,
-  CompanyMember: require("./companyMember.model").default,
-  Project: require("./project.model").default,
-  Team: require("./team.model").default,
-  Task: require("./task.model").default,
-  TaskActivity: require("./taskActivity.model").default,
+  User,
+  CompanyMember,
+  Project,
+  Team,
+  Task,
+  TaskActivity,
 };
 
 export default models;

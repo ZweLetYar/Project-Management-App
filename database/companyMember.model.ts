@@ -27,5 +27,7 @@ const CompanyMemberSchema = new Schema<ICompanyMember>(
 
 CompanyMemberSchema.index({ companyId: 1, userId: 1 }, { unique: true });
 
-export default models.CompanyMember ||
+const CompanyMember =
+  models?.CompanyMember ||
   model<ICompanyMember>("CompanyMember", CompanyMemberSchema);
+export default CompanyMember;

@@ -29,4 +29,5 @@ const ProjectSchema = new Schema<IProject>(
   { timestamps: true },
 );
 
-export default models.Project || model<IProject>("Project", ProjectSchema);
+const Project = models?.Project || model<IProject>("Project", ProjectSchema);
+export default Project;

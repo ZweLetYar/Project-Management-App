@@ -23,5 +23,5 @@ const TaskActivitySchema = new Schema<ITaskActivity>(
   { timestamps: true },
 );
 
-export default models.TaskActivity ||
-  model<ITaskActivity>("TaskActivity", TaskActivitySchema);
+const TaskActivity = models?.TaskActivity || model<ITaskActivity>("TaskActivity", TaskActivitySchema);
+export default TaskActivity;

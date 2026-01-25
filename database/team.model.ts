@@ -21,4 +21,6 @@ const TeamSchema = new Schema<ITeam>(
   { timestamps: true },
 );
 
-export default models.Team || model<ITeam>("Team", TeamSchema);
+const Team = models?.Team || model<ITeam>("Team", TeamSchema);
+
+export default Team;

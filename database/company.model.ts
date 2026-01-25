@@ -23,4 +23,6 @@ const CompanySchema = new Schema<ICompany>(
   { timestamps: true },
 );
 
-export default models.Company || model<ICompany>("Company", CompanySchema);
+const Company = models?.Company || model<ICompany>("Company", CompanySchema);
+
+export default Company;

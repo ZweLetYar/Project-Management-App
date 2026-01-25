@@ -42,4 +42,6 @@ const TaskSchema = new Schema<ITask>(
   { timestamps: true },
 );
 
-export default models.Task || model<ITask>("Task", TaskSchema);
+const Task = models?.Task || model<ITask>("Task", TaskSchema);
+
+export default Task;
