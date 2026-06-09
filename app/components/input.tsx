@@ -5,6 +5,8 @@ function input({
   label,
   type,
   text,
+  name,
+  id,
   ...props
 }: {
   placeholder?: string;
@@ -12,14 +14,16 @@ function input({
   type: string;
   text?: string;
 } & React.InputHTMLAttributes<HTMLInputElement>) {
+  const inputId = id ?? name ?? "";
+
   return (
     <>
-      {label && <label htmlFor="">{label}</label>}
+      {label && <label htmlFor={inputId}>{label}</label>}
       <input
         {...props}
         type={type}
-        name=""
-        id=""
+        name={name ?? ""}
+        id={inputId}
         className="border-b-1 border-b-cyan-800 block w-full py-2 mb-2 placeholder:text-gray-600 px-4  focus:outline-none focus:border-gray-600 focus:placeholder-transparent "
         placeholder={placeholder}
       />
